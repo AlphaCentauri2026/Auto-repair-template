@@ -18,9 +18,9 @@ export default function Navigation() {
   return (
     <nav className="bg-slate-900/95 backdrop-blur-lg shadow-2xl sticky top-0 z-50 border-b border-slate-700/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center">
+        <div className="relative h-20">
+          {/* Logo - Positioned absolutely */}
+          <div className="absolute -left-16 top-1/2 transform -translate-y-1/2 z-10">
             <Link href="/" className="flex-shrink-0 group">
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg">
@@ -38,14 +38,14 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:block">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex lg:items-center lg:justify-center h-full">
             <div className="flex items-center space-x-1">
               {navItems.map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative px-4 py-3 text-slate-300 hover:text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-105 group"
+                  className="relative px-5 py-3 text-slate-300 hover:text-white font-semibold text-base tracking-wide transition-all duration-300 hover:scale-105 group"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <span className="relative z-10">{item.name}</span>
@@ -56,8 +56,8 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* CTA Button & Mobile Menu */}
-          <div className="flex items-center space-x-4">
+          {/* CTA Button & Mobile Menu - Positioned absolutely */}
+          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-4">
             {/* Desktop CTA */}
             <div className="hidden lg:block">
               <Link href="/contact" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
