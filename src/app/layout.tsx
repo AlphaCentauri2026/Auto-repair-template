@@ -34,4 +34,3 @@ export default function RootLayout({
     </html>
   );
 }
-// Deployment fix - Thu Sep 11 19:53:26 EDT 2025
